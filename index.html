@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <style>
+    :root {
+      --primary-color: rgba(146, 172, 209, 0.8);
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .keyboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 1000px;
+      height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      padding: 20px;
+    }
+
+    .keyboard .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .row.qwer {
+      width: 100%;
+    }
+
+    .row.asdf {
+      width: 90%;
+    }
+
+    .row.zxcv {
+      width: 80%;
+    }
+
+    .key {
+      height: 75px;
+      width: 75px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      border-radius: 10px;
+      color: #eee;
+      font-size: 30px;
+      font-weight: bolder;
+      -webkit-font-smoothing: antialiased;
+      box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.25),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.3),
+        0px 0px 0px 0 rgba(255, 255, 255, 0.25) inset,
+        0px 0px 0px 0 rgba(0, 0, 0, 0.3) inset;
+      transition: all 50ms ease-in;
+      cursor: pointer;
+    }
+
+    .key:active {
+      box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.25),
+        0px 0px 0px 0 rgba(255, 255, 255, 0.3),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
+        3px 3px 2px 0 rgba(0, 0, 0, 0.3) inset;
+      transform: scale(0.95, 0.95);
+    }
+
+    .key.active {
+      box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.25),
+        0px 0px 0px 0 rgba(255, 255, 255, 0.3),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
+        3px 3px 2px 0 rgba(0, 0, 0, 0.3) inset;
+      transform: scale(0.95, 0.95);
+    }
+  </style>
+  <body>
+    <div class="keyboard">
+      <div class="row qwer">
+        <button id="KeyQ" class="key">
+          Q
+        </button>
+        <button id="KeyW" class="key">
+          W
+        </button>
+        <button id="KeyE" class="key">
+          E
+        </button>
+        <button id="KeyR" class="key">
+          R
+        </button>
+        <button id="KeyT" class="key">
+          T
+        </button>
+        <button id="KeyY" class="key">
+          Y
+        </button>
+        <button id="KeyU" class="key">
+          U
+        </button>
+        <button id="KeyI" class="key">
+          I
+        </button>
+        <button id="KeyO" class="key">
+          O
+        </button>
+        <button id="KeyP" class="key">
+          P
+        </button>
+      </div>
+      <div class="row asdf">
+        <button id="KeyA" class="key">
+          A
+        </button>
+        <button id="KeyS" class="key">
+          S
+        </button>
+        <button id="KeyD" class="key">
+          D
+        </button>
+        <button id="KeyF" class="key">
+          F
+        </button>
+        <button id="KeyG" class="key">
+          G
+        </button>
+        <button id="KeyH" class="key">
+          H
+        </button>
+        <button id="KeyJ" class="key">
+          J
+        </button>
+        <button id="KeyK" class="key">
+          K
+        </button>
+        <button id="KeyL" class="key">
+          L
+        </button>
+      </div>
+      <div class="row zxcv">
+        <button id="KeyZ" class="key">
+          Z
+        </button>
+        <button id="KeyX" class="key">
+          X
+        </button>
+        <button id="KeyC" class="key">
+          C
+        </button>
+        <button id="KeyV" class="key">
+          V
+        </button>
+        <button id="KeyB" class="key">
+          B
+        </button>
+        <button id="KeyN" class="key">
+          N
+        </button>
+        <button id="KeyM" class="key">
+          M
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
