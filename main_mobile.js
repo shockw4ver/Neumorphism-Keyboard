@@ -9,17 +9,16 @@ function _getKey(code) {
   return keyCaches[code];
 }
 
-function _handleKeydown(e) {
-  _getKey(e.code).classList.add("active");
-}
-
-function _handleKeyup(e) {
-  _getKey(e.code).classList.remove("active");
+function _handleClick(id) {
+  return () => {
+    _getKey(id).classList.toggle("active");
+  };
 }
 
 function start() {
-  document.addEventListener("keypress", _handleKeydown);
-  document.addEventListener("keyup", _handleKeyup);
+  Object.values(document.getElementsByClassName("key")).forEach((key) => {
+    key.addEventListener("click", _handleClick(key.id));
+  });
 
   modeToggler = document.getElementById("modeToggler");
   modeToggler.addEventListener("click", () => {

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="switcher.css" />
+  </head>
+  <style>
+    .numpad {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      padding: 20px;
+    }
+
+    .key {
+      align-self: center;
+      justify-self: center;
+    }
+  </style>
+  <body>
+    <h1>Neumorphism Numpad</h1>
+    <div class="numpad">
+      <button id="Numpad1" class="key">
+        1
+      </button>
+      <button id="Numpad2" class="key">
+        2
+      </button>
+      <button id="Numpad3" class="key">
+        3
+      </button>
+      <button id="Numpad4" class="key">
+        4
+      </button>
+      <button id="Numpad5" class="key">
+        5
+      </button>
+      <button id="Numpad6" class="key">
+        6
+      </button>
+      <button id="Numpad7" class="key">
+        7
+      </button>
+      <button id="Numpad8" class="key">
+        8
+      </button>
+      <button id="Numpad9" class="key">
+        9
+      </button>
+    </div>
+
+    <div id="modeToggler" class="switcher">
+      <div class="track"></div>
+      <div class="dot"></div>
+    </div>
+  </body>
+  <script src="main_mobile.js"></script>
+</html>
