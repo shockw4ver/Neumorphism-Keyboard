@@ -1,13 +1,23 @@
+const keyCaches = {};
+
+function _getKey(code) {
+  if (!keyCaches[code]) {
+    keyCaches[code] = document.querySelector(`#${code}`);
+  }
+
+  return keyCaches[code];
+}
+
 function _handleKeydown(e) {
-  document.querySelector(`#${e.code}`).classList.toggle("active");
+  _getKey(e.code).classList.add("active");
 }
 
 function _handleKeyup(e) {
-  document.querySelector(`#${e.code}`).classList.toggle("active");
+  _getKey(e.code).classList.remove("active");
 }
 
 function start() {
-  document.addEventListener("keydown", _handleKeydown);
+  document.addEventListener("keypress", _handleKeydown);
   document.addEventListener("keyup", _handleKeyup);
 }
 

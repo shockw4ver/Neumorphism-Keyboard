@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <style>
     :root {
       --primary-color: rgba(146, 172, 209, 0.8);
+      --neumorphism-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.25),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.3),
+        1px 1px 2px 0 rgba(255, 255, 255, 0.25) inset,
+        -1px -1px 2px 0 rgba(0, 0, 0, 0.3) inset;
+      --neumorphism-box-shadow-active: -1px -1px 2px 0 rgba(0, 0, 0, 0.25),
+        1px 1px 2px 0 rgba(255, 255, 255, 0.3),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
+        2px 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
+    }
+
+    body.hard {
+      --neumorphism-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.25),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 0 rgba(255, 255, 255, 0.25) inset,
+        0 0 0 0 rgba(0, 0, 0, 0.3) inset;
+      --neumorphism-box-shadow-active: 0 0 0 0 rgba(0, 0, 0, 0.25),
+        0 0 0 0 rgba(255, 255, 255, 0.3),
+        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
+        2px 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
     }
 
     html,
@@ -20,8 +45,16 @@
     body {
       background-color: var(--primary-color);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 60px;
+      font-family: "Roboto", sans-serif;
+      user-select: none;
     }
 
     .keyboard {
@@ -29,7 +62,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      width: 1000px;
+      width: 900px;
       height: 300px;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 30px;
@@ -60,36 +93,29 @@
       border: none;
       outline: none;
       background-color: transparent;
-      border-radius: 10px;
-      color: #eee;
+      border-radius: 20px;
+      color: rgba(255, 255, 255, 0.6);
       font-size: 30px;
+      font-family: "Roboto", sans-serif;
       font-weight: bolder;
       -webkit-font-smoothing: antialiased;
-      box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.25),
-        -2px -2px 4px 0 rgba(255, 255, 255, 0.3),
-        0px 0px 0px 0 rgba(255, 255, 255, 0.25) inset,
-        0px 0px 0px 0 rgba(0, 0, 0, 0.3) inset;
+      box-shadow: var(--neumorphism-box-shadow);
       transition: all 50ms ease-in;
       cursor: pointer;
     }
 
     .key:active {
-      box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.25),
-        0px 0px 0px 0 rgba(255, 255, 255, 0.3),
-        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
-        3px 3px 2px 0 rgba(0, 0, 0, 0.3) inset;
+      box-shadow: var(--neumorphism-box-shadow-active);
       transform: scale(0.95, 0.95);
     }
 
     .key.active {
-      box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.25),
-        0px 0px 0px 0 rgba(255, 255, 255, 0.3),
-        -2px -2px 4px 0 rgba(255, 255, 255, 0.25) inset,
-        3px 3px 2px 0 rgba(0, 0, 0, 0.3) inset;
+      box-shadow: var(--neumorphism-box-shadow-active);
       transform: scale(0.95, 0.95);
     }
   </style>
-  <body>
+  <body class="hard">
+    <h1>Neumorphism Keyboard</h1>
     <div class="keyboard">
       <div class="row qwer">
         <button id="KeyQ" class="key">
