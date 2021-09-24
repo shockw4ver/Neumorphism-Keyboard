@@ -1,5 +1,6 @@
 const keyCaches = {};
 let modeToggler = null;
+let raisedToggler = null;
 
 function _getKey(code) {
   if (!keyCaches[code]) {
@@ -25,6 +26,12 @@ function start() {
   modeToggler.addEventListener("click", () => {
     modeToggler.classList.toggle("checked");
     document.body.classList.toggle("sharp");
+  });
+
+  raisedToggler = document.getElementById("raisedToggler");
+  raisedToggler.addEventListener("click", () => {
+    raisedToggler.classList.toggle("checked");
+    document.body.classList.toggle("raised");
   });
 }
 
